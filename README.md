@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DisasterWatch
 
 Real-Time Disaster Alert Platform built with the MERN stack.
@@ -238,3 +239,6 @@ cd client && npm run dev
 ## Next Phase
 
 Frontend setup with React + Vite + Tailwind CSS, Leaflet map, Socket.IO client, dashboard charts, admin panel, and dark mode — **COMPLETE**.
+=======
+# Projects
+>>>>>>> 3d39fe28613ebe3cac8b61de49d2fdb3b45455e6
