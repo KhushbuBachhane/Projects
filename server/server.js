@@ -31,10 +31,26 @@ const io = new Server(httpServer, {
   },
 });
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://real-time-disaster-alert-platform-cgxc-lsuz9u8sk.vercel.app"
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
+}));
+
 connectDB();
 initSocket(io);
 
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(attachIoToRequest(io));

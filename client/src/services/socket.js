@@ -1,7 +1,9 @@
 import { io } from 'socket.io-client';
-import { SOCKET_URL } from '../utils/constants';
 
 let socket = null;
+
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL;
+
 
 export const getSocket = () => {
   if (!socket) {
