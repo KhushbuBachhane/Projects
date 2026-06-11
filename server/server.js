@@ -45,6 +45,13 @@ app.get('/api/health', (req, res) => {
   res.json({ success: true, message: 'DisasterWatch API is running' });
 });
 
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'DisasterWatch Backend Running'
+  });
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/disasters', disasterRoutes);
 app.use('/api/users', userRoutes);
